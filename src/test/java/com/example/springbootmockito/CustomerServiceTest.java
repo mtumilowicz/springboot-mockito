@@ -1,6 +1,5 @@
 package com.example.springbootmockito;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.function.Executable;
@@ -31,13 +30,6 @@ class CustomerServiceTest {
             .firstName("firstName")
             .build();
 
-    @BeforeEach
-    void init() {
-//        when(userRepository.isUsernameAlreadyExists(any(String.class)))
-//                .thenReturn(false);
-
-    }
-
     @Test
     void findAll() {
 //        given
@@ -51,7 +43,7 @@ class CustomerServiceTest {
         List<Customer> customers = customerService.findAll();
 
 //        then
-        verify(customerRepository, times(1)).findAll();
+        verify(customerRepository).findAll();
         assertThat(customers, is(Collections.singletonList(customer1)));
     }
 
@@ -68,7 +60,7 @@ class CustomerServiceTest {
         Customer customer = customerService.findById(1);
 
 //        then
-        verify(customerRepository, times(1)).findById(1);
+        verify(customerRepository).findById(1);
         assertThat(customer, is(customer1));
     }
 
@@ -86,7 +78,7 @@ class CustomerServiceTest {
 
 //        then
         assertThrows(EntityNotFoundException.class, executable, "Customer with id = 1 cannot be found");
-        verify(customerRepository, times(1)).findById(2);
+        verify(customerRepository, atMost(1)).findById(2);
     }
     
     
