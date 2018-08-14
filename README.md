@@ -1,5 +1,5 @@
 # springboot-mockito
-The main goal of this project is to show how to integrate `Mockito` with `Spring Boot`.
+The main goal of this project is to explore basics od `Mockito` in `Spring Boot` environment.
 
 # manual
 * add `@ExtendWith(MockitoExtension.class)` to the class
