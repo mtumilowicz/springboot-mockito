@@ -22,19 +22,19 @@ The main goal of this project is to explore basics od `Mockito` in `Spring Boot`
     when(customerRepository.findById(1)).thenReturn(Optional.of(customer1));
     ```    
     
-    _Remark_: note that:
-    ```
-    when(...).thenReturn(...)
-    ```
-    and
-    ```
-    doReturn(...).when(...)
-    ```
-    are equivalent for mocks, they differ when comes to spy:
-    * **when thenReturn** - makes a real method call just before the specified value will 
-    be returned (if the called method throws an `Exception` you have to deal with it and you
-    still get the result),
-    * **doReturn when** - does not call the method at all.
+    * _Note that_:
+        ```
+        when(...).thenReturn(...)
+        ```
+        and
+        ```
+        doReturn(...).when(...)
+        ```
+        are equivalent for mocks, they differ when comes to spy:
+        * **when thenReturn** - makes a real method call just before the specified value will 
+        be returned (if the called method throws an `Exception` you have to deal with it and you
+        still get the result),
+        * **doReturn when** - does not call the method at all.
     
 * to verify how many times method was invoked:
 
