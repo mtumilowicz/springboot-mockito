@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/springboot-mockito.svg?branch=master)](https://travis-ci.com/mtumilowicz/springboot-mockito)
+
 # springboot-mockito
 The main goal of this project is to explore basics od `Mockito` in `Spring Boot` environment.
 
